@@ -61,7 +61,7 @@ textarea {
     border-radius: 5px;
     display: flex;
     gap: 15px;
-
+    transition: all 0.3s ease-in-out;
 }
 .query-label input {
     position: relative;
@@ -79,15 +79,21 @@ input[type='submit']{
     width: 100%;
     border-radius: 10px;
 }
-input[type='text']:hover, input[type='email']:hover, textarea:hover {
-    border-color: var(--medium-green);
-    border-width: 2px;
- 
-}
+
 input[type='radio']{
     accent-color: var(--medium-green);
     cursor: pointer;
 }
-input[type='radio'].selected {
-    accent-color: red;
+.query-label.selected {
+    background: var(--light-green);
+    border: 1px solid var(--medium-green);
+}
+.all-input {
+    transition: all 0.3s ease-in-out ;
+}
+.all-input:focus {
+    border: 2px solid var(--medium-green);
+}
+input[type='checkbox']{
+    accent-color: var(--medium-green);
 }
