@@ -2,11 +2,78 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap'); */
 
 * {
     font-family: "Karla", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
     font-size: 16px;
+    font-weight: 400;
+}
+:root {
+    --light-green : hsl(148, 38%, 91%);
+    --medium-green: hsl(169, 82%, 27%);
+    --deep-red: hsl(0, 66%, 54%);
+    --neutral-white: hsl(0, 0%, 100%);
+    --medium500-grey:  hsl(186, 15%, 59%);
+    --darker900-grey:   hsl(187, 24%, 22%);
+    --fontweight-400: 400;
+    --fontweight-700: 700;
+}
+body {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    padding: 20px;
+    background: var(--light-green);
+}
+input[type='text'], input[type='email'] {
+    border: 1px solid var(--medium500-grey);
+    outline: none;
+    width: 100%;
+    height: 35px;
+    border-radius: 5px;
+    padding-left: 10px;
+    position: relative;
+    margin-top: 10px;
+}
+textarea {
+    border: 1px solid var(--medium500-grey);
+    width: 100%;
+    border-radius: 5px;
+    padding-left: 10px;
+    outline: none;
+    resize: none;
+    position: relative;
+    margin-top: 10px;
+}
+.container {
+    background: var(--neutral-white);
+    padding: 30px;
+    border-radius: 10px;
+}
+.query-label {
+    border: 1px solid var(--medium500-grey);
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    gap: 15px;
+
+}
+.query-label input {
+    position: relative;
+    margin-left: 10px;
+    width: 15px;
+    
+}
+h1 {
+    font-weight: var(--fontweight-700);
+}
+input[type='submit']{
+    background: var(--medium-green);
+    color: var(--neutral-white);
+    padding: 10px;
+    width: 100%;
+    border-radius: 10px;
 }
