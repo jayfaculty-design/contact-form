@@ -37,6 +37,7 @@ input[type='text'], input[type='email'] {
     padding-left: 10px;
     position: relative;
     margin-top: 10px;
+    transition: all 0.3s ease-in-out;
 }
 textarea {
     border: 1px solid var(--medium500-grey);
@@ -47,6 +48,7 @@ textarea {
     resize: none;
     position: relative;
     margin-top: 10px;
+    transition: all 0.3s ease-in-out;
 }
 .container {
     background: var(--neutral-white);
@@ -76,4 +78,16 @@ input[type='submit']{
     padding: 10px;
     width: 100%;
     border-radius: 10px;
+}
+input[type='text']:hover, input[type='email']:hover, textarea:hover {
+    border-color: var(--medium-green);
+    border-width: 2px;
+ 
+}
+input[type='radio']{
+    accent-color: var(--medium-green);
+    cursor: pointer;
+}
+input[type='radio'].selected {
+    accent-color: red;
 }

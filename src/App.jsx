@@ -4,7 +4,12 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  
+  const [selectedItem, setSelected] = useState(false);
+  const [query, setQuery] = useState('general')
+
+  function handleRadio(event){
+    setQuery(event.target.value)
+  }
 
   return (
     <>
@@ -33,11 +38,23 @@ function App() {
             Query Type *
           </label>
           <label className='query-label' htmlFor="">
-            <input name='query' type="radio" />
+            <input 
+              name='query' 
+              value='general' 
+              checked={query === 'general'} 
+              type="radio"
+              onChange={handleRadio}
+            />
             General Enquiry
           </label>
           <label className='query-label' htmlFor="">
-            <input name='query' type="radio" />
+            <input 
+              name='query'
+              value='support' 
+              type="radio" 
+              checked={query === 'support'} 
+              onChange={handleRadio}
+            />
             Support Request
           </label>
           <label htmlFor="">
@@ -45,9 +62,9 @@ function App() {
             <textarea className='block' name="" id="" cols="30" rows="10"></textarea>
             
           </label>
-          <label htmlFor="">
+          <label className='flex  gap-[10px]' htmlFor="">
             <input type="checkbox" name="" id="" />
-            I consent to being contacted by the team
+            I consent to being contacted by the team *
           </label>
           <input className='cursor-pointer' type="submit" value="Submit" />
         </div>
