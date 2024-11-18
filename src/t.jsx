@@ -140,34 +140,31 @@ function App() {
 
   return (
     <>
-      <div
-        class={`pop-up ${
-          isModalOpen ? "show-modal" : ""
-        } fixed top-0 left-0 right-0 hidden items-center justify-center z-50`}
-      >
+      <div class={`pop-up ${isModalOpen ? 'show-modal' : ''} fixed left-0 right-0 hidden items-center justify-center z-50`}>
         <div class="bg-darker900-grey p-6 rounded-lg shadow-lg text-center flex flex-col gap-3">
           <div className="flex gap-5">
-            <img src="./images/icon-success-check.svg" alt="" />
-            <p class="text-lg text-neutral-white font-medium">Message Sent!</p>
+          <img src="./images/icon-success-check.svg" alt="" />
+          <p class="text-lg text-neutral-white font-medium">Message Sent!</p>
           </div>
-
-          <p className="text-light-green">
-            Thanks for completing the form. We'll be in touch soon!
-          </p>
+          
+          <p className="text-light-green">Thanks for completing the form. We'll be in touch soon!</p>
         </div>
       </div>
 
-      <div className="main-container absolute left-1/2 top-[0px] transform -translate-x-1/2 w-full max-w-[800px] h-auto p-8 bg-white rounded-lg flex justify-center items-center">
+      
+      
+
+      <div className="main-container absolute left-1/2 transform -translate-x-1/2 w-[90%] max-w-[600px] top-[200px] md:pl-[100px] md:pr-[100px] mt-[10px] h-[400px] flex justify-center items-center">
         <form onSubmit={handleSubmit} className="container">
           <div>
-            <h1 className="text-[24px] font-bold text-left mb-4">Contact Us</h1>
+            <h1 className="text-[30px]">Contact Us</h1>
           </div>
-          <div className="form-content flex flex-col gap-6">
-            <div className="flex gap-4">
+          <div className="form-content flex w-[100%] flex-col gap-10 relative mt-[30px]">
+            <div className="flex gap-[30px] w-[100%] content">
               <label className="flex-1" htmlFor="">
                 First Name *
                 <input
-                  className="block w-full p-2 border border-gray-300 rounded"
+                  className={`block sm:inline-block all-input`}
                   type="text"
                   name="firstname"
                   onChange={handleFirstName}
@@ -175,13 +172,13 @@ function App() {
                   value={firstName}
                 />
                 {firstNameError && (
-                  <p className="text-deep-red">{firstNameError}</p>
+                  <p style={{ color: "red" }}>{firstNameError}</p>
                 )}
               </label>
               <label className="flex-1" htmlFor="">
                 Last Name *
                 <input
-                  className="block w-full p-2 border border-gray-300 rounded"
+                  className={`block sm:inline-block all-input`}
                   type="text"
                   name="lastname"
                   onChange={handleLastName}
@@ -189,24 +186,27 @@ function App() {
                   value={lastName}
                 />
                 {lastNameError && (
-                  <p className="text-deep-red">{lastNameError}</p>
+                  <p style={{ color: "red" }}>{lastNameError}</p>
                 )}
               </label>
             </div>
+
             <label htmlFor="">
               Email Address *
               <input
                 value={emailAddress}
-                className="block w-full p-2 border border-gray-300 rounded"
+                className={`block all-input`}
                 type="email"
                 onChange={handleEmail}
                 onBlur={validateEmail}
                 name="email"
               />
-              {emailError && <p className="text-deep-red">{emailError}</p>}
+              {emailError && <p style={{ color: "red" }}>{emailError}</p>}
             </label>
-            <label htmlFor="">Query Type *</label>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <label className="relative top-[15px]" htmlFor="">
+              Query Type *
+            </label>
+            <div className="flex flex-col gap-[30px] sm:flex-row relative">
               <label
                 className={`query-label sm:w-[50%] ${
                   query === "general" ? "selected" : ""
@@ -238,30 +238,33 @@ function App() {
                 Support Request
               </label>
             </div>
-            {queryError && <p className="text-deep-red">{queryError}</p>}
+            {queryError && <p style={{ color: "red" }}>{queryError}</p>}
+
             <label htmlFor="">
               Message *
               <textarea
                 onBlur={validateMessage}
                 value={message}
-                className="block w-full p-2 border border-gray-300 rounded"
+                className="block all-input"
                 onChange={handleMessage}
                 cols="30"
-                rows="4"
+                rows="10"
               ></textarea>
-              {messageError && <p className="text-deep-red">{messageError}</p>}
+              {messageError && <p style={{ color: "red" }}>{messageError}</p>}
             </label>
-            <label className="flex items-center gap-2">
+            <label className="flex  gap-[10px] relative " htmlFor="">
               <input
                 onChange={handleCheckBoxChange}
                 onBlur={validateCheckBox}
                 type="checkbox"
+                name=""
+                id=""
               />
               I consent to being contacted by the team *
             </label>
-            {checkError && <p className="text-deep-red">{checkError}</p>}
+            {checkError && <p style={{ color: "red" }}>{checkError}</p>}
             <input
-              className="bg-blue-500 text-white py-2 px-4 rounded cursor-pointer hover:bg-blue-600"
+              className="cursor-pointer relative"
               type="submit"
               value="Submit"
             />
@@ -273,3 +276,4 @@ function App() {
 }
 
 export default App;
+
