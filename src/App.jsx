@@ -143,7 +143,7 @@ function App() {
       <div
         class={`pop-up ${
           isModalOpen ? "show-modal" : ""
-        } fixed top-0 left-0 right-0 hidden items-center justify-center z-50`}
+        } fixed top-0 left-0 right-0 hidden items-center justify-center z-50 pl-[30px] pr-[30px]`}
       >
         <div class="bg-darker900-grey p-6 rounded-lg shadow-lg text-center flex flex-col gap-3">
           <div className="flex gap-5">
@@ -151,7 +151,7 @@ function App() {
             <p class="text-lg text-neutral-white font-medium">Message Sent!</p>
           </div>
 
-          <p className="text-light-green">
+          <p className="text-light-green text-left">
             Thanks for completing the form. We'll be in touch soon!
           </p>
         </div>
